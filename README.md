@@ -6,24 +6,18 @@ This project template/guide helps you to bootstrap the process and creates a sim
 
 Clone the repo:
 
-    git clone https://github.com/jorilallo/celery-flower-heroku.git
+    git clone https://github.com/Tesorio/celery-flower-heroku.git
 
 Create an Heroku app:
 
     heroku create APP_NAME
 
-Add database for persistance:
+You will need to set the following environment variables (read more about auth here https://flower.readthedocs.io/en/latest/auth.html):
 
-    heroku addons:create heroku-postgresql:hobby-dev
-    heroku config:set DATABASE_URL=<copy the newly created database url here>
-
-Configure the app by providing your broker url (RabbitMQ, Redis, what have you) and a password for logging into Flower:
-
-    heroku config:set BROKER_URL=redis://...
-    heroku config:set FLOWER_BASIC_AUTH="username:password"
+    BROKER_URL FLOWER_OAUTH2_KEY FLOWER_OAUTH2_REDIRECT_URI FLOWER_OAUTH2_SECRET
 
 Push to heroku:
 
     git push heroku master
 
-Now visit the app. It will ask for a username and a password which you defined above.
+Now visit the app.
