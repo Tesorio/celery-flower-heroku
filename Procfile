@@ -1,1 +1,1 @@
-web: flower --port=$PORT --broker=$BROKER_URL --persistent=true --auth_provider=flower.views.auth.GithubLoginHandler --auth=.*@tesorio\.com
+web: flower --port=$PORT --broker=$BROKER_URL --broker_api=$BROKER_API_URL --persistent=true --auth_provider=flower.views.auth.GithubLoginHandler --auth=.*@tesorio\.com
